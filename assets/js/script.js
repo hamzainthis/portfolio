@@ -156,4 +156,73 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
+  
 }
+// Open modal
+document.querySelectorAll('.open-modal').forEach(button => {
+  button.addEventListener('click', event => {
+    event.preventDefault();
+    const modal = document.querySelector(button.getAttribute('data-target'));
+    modal.style.display = 'flex';
+  });
+});
+
+// Close modal when clicking on the close button
+document.querySelectorAll('.close').forEach(closeButton => {
+  closeButton.addEventListener('click', () => {
+    closeButton.closest('.modal').style.display = 'none';
+  });
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', event => {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+  }
+});
+
+// Open modal
+document.querySelectorAll('.open-modal').forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.getAttribute('data-target'));
+    modal.classList.add('active');
+    document.querySelector('.overlay').classList.add('active');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.close').forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.modal').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+  });
+});
+
+// Close modal when clicking outside
+document.querySelector('.overlay').addEventListener('click', () => {
+  document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('active'));
+  document.querySelector('.overlay').classList.remove('active');
+});
+// Open modal
+document.querySelectorAll('.open-modal').forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.getAttribute('data-target'));
+    modal.classList.add('active');
+    document.querySelector('.overlay').classList.add('active');
+  });
+});
+
+// Close modal
+document.querySelectorAll('.close').forEach(button => {
+  button.addEventListener('click', () => {
+    button.closest('.modal').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+  });
+});
+
+// Close modal when clicking outside
+document.querySelector('.overlay').addEventListener('click', () => {
+  document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('active'));
+  document.querySelector('.overlay').classList.remove('active');
+});
+

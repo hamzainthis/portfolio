@@ -871,6 +871,7 @@ main {
 
 
 
+
 /*-----------------------------------*\
   #PORTFOLIO
 \*-----------------------------------*/
@@ -1879,4 +1880,61 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+.skills-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--white-2);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 15px;
+  background: var(--bg-gradient-jet);
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+}
+
+.skills-item {
+  background: var(--onyx);
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-1);
+}
+
+.skills-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-3);
+}
+
+.title-wrapper h5 {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-4);
+  margin-bottom: 8px;
+  font-weight: var(--fw-500);
+}
+
+.title-wrapper p {
+  color: var(--light-gray);
+  line-height: 1.6;
+  font-size: var(--fs-6);
+}
+
+.skill .title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
 }
