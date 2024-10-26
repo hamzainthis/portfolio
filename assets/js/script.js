@@ -226,3 +226,42 @@ document.querySelector('.overlay').addEventListener('click', () => {
   document.querySelector('.overlay').classList.remove('active');
 });
 
+'use strict';
+
+// Open modal with project images
+function showImagesModal(project) {
+  const imageGallery = document.getElementById('imageGallery');
+  imageGallery.innerHTML = ''; // Clear previous images
+
+  const projectImages = {
+    spotirec: [
+      './assets/images/spotify1.png',
+      './assets/images/spotify2.png',
+      './assets/images/spotify3.png'
+    ]
+  };
+
+  // Add images to the gallery if available
+  if (projectImages[project]) {
+    projectImages[project].forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `${project} image`;
+      imageGallery.appendChild(img);
+    });
+  }
+
+  // Show modal and overlay
+  document.getElementById('imagesModal').classList.remove('hidden');
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+
+// Close the modal
+function closeModal() {
+  document.getElementById('imagesModal').classList.add('hidden');
+  document.getElementById('modalOverlay').classList.add('hidden');
+}
+
+// Add event listeners for closing the modal
+document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', closeModal);
